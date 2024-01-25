@@ -11,5 +11,3 @@ def index():
         return str(add + ' ' + dns.resolver.resolve(add, 'A')[0].to_text())
     except Exception as e:
         return str(e), 500
-
-app.run()

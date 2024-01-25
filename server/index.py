@@ -12,7 +12,7 @@ def index():
     try:
         res = ''
         for i in add:
-            res += str(i + ' ' + dns.resolver.resolve(i, 'A')[0].to_text())
+            res += str(dns.resolver.resolve(i, 'A')[0].to_text() + ' ' + i)
             res += '\n'
         rsp = make_response(res)
         rsp.headers['Content-Type']= 'text/plain'

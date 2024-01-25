@@ -18,10 +18,10 @@ def callback():
     if res.status_code == 200:
         if platform.system() == 'Windows':
             with open(host_windows, 'a+') as f:
-                f.write(res.text)
+                f.write('\n' + res.text)
         else:
             with open(host_linux, 'a+') as f:
-                f.write(res.text)
+                f.write('\n' + res.text)
         var.set('添加成功！')
     else:
         var.set(res.text)

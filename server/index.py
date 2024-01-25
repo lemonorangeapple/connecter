@@ -14,6 +14,8 @@ def index():
         for i in add:
             res += str(i + ' ' + dns.resolver.resolve(i, 'A')[0].to_text())
             res += '\n'
-        return res
+        rsp = make_response(res)
+        rsp.headers['Content-Type']= 'text/plain'
+        return rsp
     except Exception as e:
         return str(e), 500

@@ -6,9 +6,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     add = request.values.get('get')
-    add = add.split(';')
     if add is None:
         return '200 OK'
+    add = add.split(';')
     try:
         res = ''
         for i in add:

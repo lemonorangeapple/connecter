@@ -12,7 +12,8 @@ def index():
     try:
         res = ''
         for i in add:
-            res += str(i + ' ' + dns.resolver.resolve(i, 'A')[0].to_text() + '\n')
+            res += str(i + ' ' + dns.resolver.resolve(i, 'A')[0].to_text())
+            res += '\n'
         return res
     except Exception as e:
         return str(e), 500
